@@ -1,0 +1,7 @@
+{
+  "name": "karhebti",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
