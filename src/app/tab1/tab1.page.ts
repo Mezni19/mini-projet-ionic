@@ -1,4 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, Injectable } from '@angular/core';
+import { AnnoncesSerService } from '../annonces-ser.service';
+
+
 
 @Component({
   selector: 'app-tab1',
@@ -7,6 +10,36 @@ import { Component } from '@angular/core';
 })
 export class Tab1Page {
 
-  constructor() {}
+  
+    tabAnnonces : any ;
+    constructor(private annonceSer : AnnoncesSerService) {}
+  
+   
+   
+  category : any ;
+ 
+  author : any; 
+  ngOnInit() {
+    this.filterAnnoncesbyCategory();
+    this.filterAnnoncesbyAuthor();
+    console.log(this.category);
+  }
+  filterAnnoncesbyCategory() {
+    console.log(this.category);
+    if (this.category != undefined) {
+      this.tabAnnonces = this.annonceSer.getAnnonceByCathegorie(this.category);
+    } else {
+      this.tabAnnonces = this.annonceSer.getAllAnnonces();
+    }
+  }
+  filterAnnoncesbyAuthor() {
+    console.log(this.author);
+    if (this.author != undefined) {
+      this.tabAnnonces = this.annonceSer.getAnnonceByAuthor(this.author);
+    } else {
+      this.tabAnnonces = this.annonceSer.getAllAnnonces();
+    }
+  }
+    
 
 }
