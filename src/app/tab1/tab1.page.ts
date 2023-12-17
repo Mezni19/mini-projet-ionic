@@ -13,8 +13,6 @@ export class Tab1Page {
   
     tabAnnonces : any ;
     constructor(private annonceSer : AnnoncesSerService) {}
-  
-   
    
   category : any ;
  
