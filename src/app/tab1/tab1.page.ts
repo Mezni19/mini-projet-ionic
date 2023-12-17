@@ -11,23 +11,23 @@ import { AnnoncesSerService } from '../annonces-ser.service';
 export class Tab1Page {
 
   
-    tabAnnonces : any ;
-    constructor(private annonceSer : AnnoncesSerService) {}
+    tabAnnonces : any ; //contient la liste des annonces
+    constructor(private annonceSer : AnnoncesSerService) {} //injection de de service
    
   category : any ;
  
   author : any; 
   ngOnInit() {
-    this.filterAnnoncesbyCategory();
-    this.filterAnnoncesbyAuthor();
+    this.filterAnnoncesbyCategory(); //appel de methode de filtrage
+    this.filterAnnoncesbyAuthor();//appel de methode de filtrage
     console.log(this.category);
   }
   filterAnnoncesbyCategory() {
     console.log(this.category);
-    if (this.category != undefined) {
-      this.tabAnnonces = this.annonceSer.getAnnonceByCathegorie(this.category);
+    if (this.category != undefined) { //methode de filtrage par category 
+      this.tabAnnonces = this.annonceSer.getAnnonceByCathegorie(this.category); // si category != il recupere l 'annoce de cette category
     } else {
-      this.tabAnnonces = this.annonceSer.getAllAnnonces();
+      this.tabAnnonces = this.annonceSer.getAllAnnonces();// sinon il recupere tous les annonces
     }
   }
   filterAnnoncesbyAuthor() {

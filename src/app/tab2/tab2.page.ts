@@ -21,6 +21,7 @@ export class Tab2Page implements OnInit {
     private router: Router
   ) {}
   ngOnInit() {
+    //apres la creation de composant recuperer la route et observer la changementde des para url et recuperer les donner par id
     
     this.activatedRoute.paramMap.subscribe({
       next: (p: ParamMap) => {
@@ -31,6 +32,7 @@ export class Tab2Page implements OnInit {
     });
  
   }
+  // afficher d'un alert
   async presentAlert() {
     const alert = await this.alertCtrl.create({
       header: 'Confirmation',

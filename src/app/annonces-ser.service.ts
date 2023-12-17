@@ -45,27 +45,31 @@ export class AnnoncesSerService {
     },
   ];
   
-
+// afficher tout les annonces
   getAllAnnonces() {
     return this.allAnnonces;
   }
 
+  // afficher les annonces par id
   getAnnonceById(id : any) {
     return this.allAnnonces.find((element) => element.id == id);
   }
+  // afficher les annonces par category
   getAnnonceByCathegorie(category : any){
     return this.allAnnonces.filter((element) => element.category === category);
   }
+  // afficher les annonces par author
   getAnnonceByAuthor(author : any){
     return this.allAnnonces.filter((element) => element.author === author);
   }
+  //delete les annonces par annonce 
   deleteAnnonce(annonce : any) {
     let i = this.allAnnonces.indexOf(annonce);
     this.allAnnonces.splice(i, 1);
 
    
   }
-
+// ajouter un annonce
   addAnnonce(newAnnonce : any) {
     newAnnonce.id = this.allAnnonces[this.allAnnonces.length - 1].id + 1;
     

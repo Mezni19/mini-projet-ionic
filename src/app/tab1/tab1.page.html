@@ -14,7 +14,9 @@
   </ion-toolbar>
 </ion-header> 
 <ion-item>
-  <ion-select label="selectionner votre choix" placeholder="category" [(ngModel)]="category" (ionChange)="filterAnnoncesbyCategory()">
+  <!-- met la valeur selectionner dans la varible categry ionchange lors de la changement la fonction filterAnnoncesbyCategory  declanche -->
+  <ion-select label="selectionner votre choix" placeholder="category" 
+  [(ngModel)]="category" (ionChange)="filterAnnoncesbyCategory()">
     <ion-select-option value="rent">Rent</ion-select-option>
     <ion-select-option value="vente">vente</ion-select-option>
   
@@ -28,6 +30,7 @@
 <ion-content [fullscreen]="true" >
   
   <ion-grid fixed="true" >
+    <!-- ngfor pour parcourir le tableaux est affiche par id -->
     <ion-item [routerLink]="['/tab2', annonce.id]" *ngFor="let annonce of tabAnnonces">
       <ion-row>
         <ion-col size="auto">

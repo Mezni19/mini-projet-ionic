@@ -5,6 +5,7 @@
 </ion-header>
 
 <ion-content [fullscreen]="true" >
+  <!-- CREER un formulaire avec ngform pour gerer les donnees saisi -->
   <form #f="ngForm">
     <ion-label>brand </ion-label>
     <ion-input ngModel name="brand" type="text"></ion-input>
@@ -21,6 +22,7 @@
     <ion-label>description </ion-label>
     <ion-input ngModel name="description" type="text"></ion-input>
     <ion-button (click)="onSubmit(f.value)" color="primary" expand="block">Add</ion-button>
+    <!-- appeler la methode onSubmit pour recuperer les valeur de formaulaire -->
   </form>
 
   
