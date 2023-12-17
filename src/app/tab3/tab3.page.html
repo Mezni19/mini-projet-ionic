@@ -10,16 +10,18 @@
     <ion-input ngModel name="brand" type="text"></ion-input>
     <ion-label>model </ion-label>
     <ion-input ngModel name="model" type="text"></ion-input>
+    <ion-label>couleur </ion-label>
+    <ion-input ngModel name="couleur" type="text"></ion-input>
+    <ion-label>prix </ion-label>
+    <ion-input ngModel name="prix" type="text"></ion-input>
     <ion-label>Image </ion-label>
     <ion-input ngModel name="image" type="url"></ion-input>
     <ion-label>category </ion-label>
     <ion-input ngModel name="category" type="text"></ion-input>
     <ion-label>description </ion-label>
     <ion-input ngModel name="description" type="text"></ion-input>
-    <ion-button (click)="onSubmit(f.value)" color="success" expand="block">Add</ion-button>
+    <ion-button (click)="onSubmit(f.value)" color="primary" expand="block">Add</ion-button>
   </form>
 
-  <pre>
-    {{ f.value | json }}
-  </pre>
+  
 </ion-content>
